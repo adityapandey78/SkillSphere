@@ -120,6 +120,7 @@ function CategoriesSection() {
                     <img 
                       src={category.image} 
                       alt={category.name}
+                      loading="lazy"
                       className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className={`absolute top-3 right-3 p-2 rounded-full ${category.color}`}>

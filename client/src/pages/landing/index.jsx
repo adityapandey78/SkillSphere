@@ -1,13 +1,16 @@
 import LandingHeader from "@/components/landing-page/header";
-import HeroSection from "@/components/landing-page/hero-section";
-import CategoriesSection from "@/components/landing-page/categories-section";
-import FeaturesSection from "@/components/landing-page/features-section";
-import TestimonialsSection from "@/components/landing-page/testimonials-section";
-import CtaSection from "@/components/landing-page/cta-section";
-import Footer from "@/components/landing-page/footer";
-import { useContext, useEffect } from "react";
+import LoadingPage from "@/components/ui/loading-page";
+import { useContext, useEffect, lazy, Suspense } from "react";
 import { AuthContext } from "@/context/auth-context";
 import { useNavigate } from "react-router-dom";
+
+// Lazy load heavy sections
+const HeroSection = lazy(() => import("@/components/landing-page/hero-section"));
+const CategoriesSection = lazy(() => import("@/components/landing-page/categories-section"));
+const FeaturesSection = lazy(() => import("@/components/landing-page/features-section"));
+const TestimonialsSection = lazy(() => import("@/components/landing-page/testimonials-section"));
+const CtaSection = lazy(() => import("@/components/landing-page/cta-section"));
+const Footer = lazy(() => import("@/components/landing-page/footer"));
 
 function LandingPage() {
   const { auth } = useContext(AuthContext);
@@ -32,12 +35,21 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
       <LandingHeader />
-      <HeroSection />
-      <CategoriesSection />
-      <FeaturesSection />
-      <TestimonialsSection />
-      <CtaSection />
-      <Footer />
+      <Suspense fallback={
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading content...</p>
+          </div>
+        </div>
+      }>
+        <HeroSection />
+        <CategoriesSection />
+        <FeaturesSection />
+        <TestimonialsSection />
+        <CtaSection />
+        <Footer />
+      </Suspense>
     </div>
   );
 }

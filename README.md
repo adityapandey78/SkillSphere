@@ -9,6 +9,33 @@ A comprehensive Learning Management System built with the **MERN Stack** demonst
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 
+## ⚡ Performance Metrics
+
+<table>
+<tr>
+<td width="50%" align="center">
+
+### Mobile Performance
+
+![Mobile Performance](./client/public/mobileSpeed.png)
+
+**Score: 95/100** ✅
+
+</td>
+<td width="50%" align="center">
+
+### Desktop Performance
+
+![Desktop Performance](./client/public/DESKTOP_Speed.png)
+
+**Score: 98/100** ✅
+
+</td>
+</tr>
+</table>
+
+
+
 ## 🚀 Technical Highlights
 
 **Full-Stack Architecture:**
@@ -26,33 +53,16 @@ A comprehensive Learning Management System built with the **MERN Stack** demonst
 
 ## 🛠️ Technology Stack
 
-### Backend
-```javascript
-"dependencies": {
-  "express": "^4.21.0",           // RESTful API framework
-  "mongoose": "^8.6.3",           // MongoDB object modeling
-  "jsonwebtoken": "^9.0.2",       // JWT authentication
-  "bcryptjs": "^2.4.3",          // Password hashing
-  "cloudinary": "^2.5.0",        // Media management
-  "paypal-rest-sdk": "^1.8.1",   // Payment integration
-  "multer": "^1.4.5-lts.1",      // File upload handling
-  "cors": "^2.8.5"               // Cross-origin resource sharing
-}
-```
-
-### Frontend
-```javascript
-"dependencies": {
-  "react": "^18.3.1",                     // Modern React with hooks
-  "react-router-dom": "^6.26.2",         // Client-side routing
-  "axios": "^1.7.7",                     // HTTP client
-  "framer-motion": "^11.7.0",            // Animations
-  "react-player": "^2.16.0",             // Video player component
-  "@radix-ui/react-*": "*",              // Accessible UI components
-  "tailwindcss": "^3.4.12",              // Utility-first CSS
-  "lucide-react": "^0.441.0"             // Modern icons
-}
-```
+| Frontend | Backend |
+|----------|---------|
+| react | express |
+| react-router-dom | mongoose |
+| axios | jsonwebtoken |
+| framer-motion | bcryptjs |
+| react-player | cloudinary |
+| @radix-ui/react-* | paypal-rest-sdk |
+| tailwindcss | multer |
+| lucide-react | cors |
 
 ## 🔧 Architecture & Design Patterns
 
@@ -72,17 +82,29 @@ A comprehensive Learning Management System built with the **MERN Stack** demonst
 
 ## 📊 Key Features
 
+<table>
+<tr>
+<td width="50%" valign="top">
+
 ### 🔐 Authentication & Authorization
 - JWT-based authentication
 - Role-based access control (Student/Instructor)
 - Protected routes and middleware
 - Secure password hashing with bcrypt
 
+</td>
+<td width="50%" valign="top">
+
 ### 👨‍🏫 Instructor Dashboard
 - Course creation and management
 - Video/media upload with Cloudinary
 - Student enrollment tracking
 - Revenue analytics
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
 ### 👨‍🎓 Student Experience
 - Course browsing with advanced filtering
@@ -91,11 +113,18 @@ A comprehensive Learning Management System built with the **MERN Stack** demonst
 - Certificate generation
 - Progress reset functionality
 
+</td>
+<td width="50%" valign="top">
+
 ### 💳 Payment Processing
 - PayPal SDK integration
 - Order creation and capture
 - Transaction history
 - Secure payment flow
+
+</td>
+</tr>
+</table>
 
 ## 🚀 Quick Start
 
@@ -191,15 +220,22 @@ POST   /student/course-progress/reset-progress           # Reset progress
 
 ## 💻 Database Schema
 
+<table>
+<tr>
+<td width="50%" valign="top">
+
 ### User Model
 ```javascript
 {
   userName: String,
   userEmail: String,
-  password: String,      // Hashed with bcrypt
-  role: String          // "user" or "instructor"
+  password: String, 
+  role: String
 }
 ```
+
+</td>
+<td width="50%" valign="top">
 
 ### Course Model
 ```javascript
@@ -217,6 +253,10 @@ POST   /student/course-progress/reset-progress           # Reset progress
   isPublised: Boolean
 }
 ```
+
+</td>
+</tr>
+</table>
 
 ## 🔍 Code Quality & Best Practices
 
@@ -253,15 +293,3 @@ POST   /student/course-progress/reset-progress           # Reset progress
 - CORS configuration for cross-origin requests
 
 ---
-
-**This project demonstrates proficiency in:**
-- Full-Stack JavaScript development
-- Modern React development patterns
-- RESTful API design and implementation
-- Database design and optimization
-- Third-party service integration
-- Authentication and authorization
-- Payment processing
-- Cloud deployment and DevOps
-
-
